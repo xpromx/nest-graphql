@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import serverlessExpress from '@vendia/serverless-express';
 import { Handler } from 'express';
-import { AppModule } from './app.module';
+import { AppModule } from '../src/app.module';
 
 let server: Handler;
 
