@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { PrismaService } from 'src/prisma.service';
+import { PrismaService } from '../prisma.service';
 import { UserResolver } from './user.resolvers';
 import { UserService } from './user.service';
 import { UniqueEmail } from './validations/unique-email.validation';
