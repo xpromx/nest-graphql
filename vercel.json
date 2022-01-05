@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "dist/main.js",
-      "use": "@now/node"
+  "regions": ["hnd1"],
+  "build": {
+    "env": {
+      "NODEJS_AWS_HANDLER_NAME": "handler"
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "dist/main.js"
+  },
+  "functions": {
+    "api/index.ts": {
+      "includeFiles": "dist/**"
     }
-  ]
+  },
+  "routes": [{ "src": "/(.*)", "dest": "/api/index.ts" }]
 }

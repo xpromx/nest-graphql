@@ -26,6 +26,7 @@
     "@nestjs/graphql": "^9.1.2",
     "@nestjs/platform-express": "^8.0.0",
     "@prisma/client": "^3.7.0",
+    "@vendia/serverless-express": "^4.5.2",
     "apollo-server-express": "^3.6.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
