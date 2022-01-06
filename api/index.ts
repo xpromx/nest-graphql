@@ -13,7 +13,13 @@ async function bootstrap(): Promise<Handler> {
   return serverlessExpress({ app: expressApp });
 }
 
-exports.handler = async function (event, context, callback) {
-  server = server ?? (await bootstrap());
-  return server(event, context, callback);
+exports.handler = async function (req, res) {
+  const app = await NestFactory.create(AppModule);
+  await app.init();
+
+  const expressApp = app.getHttpAdapter().getInstance();
+  return serverlessExpress({
+    app: expressApp,
+    eventSource: { getRequest: req, getResponse: res },
+  });
 };
